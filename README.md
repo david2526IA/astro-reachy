@@ -89,6 +89,21 @@ de media estándar del SDK, obtiene frames BGR con `mini.media.get_frame()` y
 los procesa a 6 FPS por defecto; puede bajarse con `SOLAR_SCAN_FPS` en una
 Raspberry Pi si hiciera falta.
 
+### Lista de comprobación de cámara y QR
+
+Antes de iniciar una sesión con alumnado, confirma lo siguiente:
+
+1. La cámara muestra una imagen actual en el dashboard de Reachy y ninguna
+   otra aplicación está usando el dispositivo de vídeo.
+2. La tarjeta se encuentra a 25–45 cm, de frente a la cámara y con luz
+   uniforme; evita reflejos sobre el código QR.
+3. Prueba primero una tarjeta conocida, por ejemplo `MARTE_001`. Si no se
+   detecta, baja temporalmente `SOLAR_SCAN_FPS` y vuelve a comprobar enfoque,
+   distancia e iluminación antes de modificar el código.
+4. Si la aplicación arranca pero no hay imagen, revisa los permisos y el
+   backend de media del SDK en el dashboard. La prueba completa se realiza en
+   Reachy; el entorno de desarrollo no sustituye al hardware.
+
 ## Pruebas sin robot
 
 ```powershell
